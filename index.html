@@ -25,15 +25,15 @@
       justify-content: center;
     }
 
-    header img.logo {
+    header img {
       height: 100px; /* ขยายโลโก้ */
       margin-right: 15px;
     }
 
     header h1 {
-      font-size: 2.8rem;
-      font-family: 'TH Sarabun New', sans-serif;
+      font-size: 3rem;
       margin: 0;
+      font-family: 'TH Sarabun New', sans-serif;
     }
 
     .container {
@@ -55,12 +55,12 @@
       font-family: 'TH Sarabun New', sans-serif;
       margin-bottom: 15px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       gap: 10px;
     }
 
-    .section h2 img.gif {
+    .section h2 img {
       height: 40px;
     }
 
@@ -99,26 +99,27 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      header img.logo {
-        height: 70px;
+      header {
+        flex-direction: column;
+        gap: 10px;
       }
 
-      header h1 {
-        font-size: 2.2rem;
+      header img {
+        margin: 0;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://drive.google.com/thumbnail?id=1fjf65qn08ihSykXBZOOFQJJzFevHGjMh" class="logo" alt="logo" />
+    <img src="https://drive.google.com/thumbnail?id=1fjf65qn08ihSykXBZOOFQJJzFevHGjMh" alt="logo" />
     <h1>ขาหมู รสสยาม</h1>
   </header>
 
   <div class="container">
     <div class="section">
       <h2>
-        <img src="https://drive.google.com/uc?export=view&id=1_lX7jHOLCn2loV7CKXp-3PlN3i6Qpwze" class="gif" alt="กำลังทำอาหาร" />
+        <img src="https://i.postimg.cc/9QvmvWJx/GIF.gif" alt="gif" />
         กำลังเตรียมอาหาร
       </h2>
       <div id="preparing" class="orders"></div>
@@ -172,5 +173,3 @@
   </script>
 </body>
 </html>
-
-
