@@ -18,23 +18,22 @@
     header {
       background-color: #a52a2a;
       color: white;
+      text-align: center;
       padding: 10px;
-    }
-
-    .header-center {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .header-center img {
-      max-height: 120px;
+    header img.logo {
+      height: 100px; /* ขยายโลโก้ */
       margin-right: 15px;
     }
 
-    .header-center h1 {
+    header h1 {
       font-size: 2.8rem;
       font-family: 'TH Sarabun New', sans-serif;
+      margin: 0;
     }
 
     .container {
@@ -61,9 +60,8 @@
       gap: 10px;
     }
 
-    .section h2 video {
-      height: 50px;
-      border-radius: 8px;
+    .section h2 img.gif {
+      height: 40px;
     }
 
     .orders {
@@ -100,23 +98,27 @@
       .orders {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      header img.logo {
+        height: 70px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-center">
-      <img src="https://drive.google.com/thumbnail?id=1fjf65qn08ihSykXBZOOFQJJzFevHGjMh" alt="logo" />
-      <h1>ขาหมู รสสยาม</h1>
-    </div>
+    <img src="https://drive.google.com/thumbnail?id=1fjf65qn08ihSykXBZOOFQJJzFevHGjMh" class="logo" alt="logo" />
+    <h1>ขาหมู รสสยาม</h1>
   </header>
 
   <div class="container">
     <div class="section">
       <h2>
-        <video autoplay loop muted>
-          <source src="https://drive.google.com/uc?export=download&id=1AZl6DFw8ITRX88yRjNH_5mGCV84FsYhn" type="video/mp4">
-        </video>
+        <img src="https://drive.google.com/uc?export=view&id=1_lX7jHOLCn2loV7CKXp-3PlN3i6Qpwze" class="gif" alt="กำลังทำอาหาร" />
         กำลังเตรียมอาหาร
       </h2>
       <div id="preparing" class="orders"></div>
@@ -170,4 +172,5 @@
   </script>
 </body>
 </html>
+
 
