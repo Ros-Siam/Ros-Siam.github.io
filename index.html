@@ -61,7 +61,15 @@
     }
 
     .section h2 img {
-      height: 120px; /* ขยายเป็น 1.5 เท่า จาก 80px */
+      height: 120px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 3px;
+      background-color: #ffffff;
+      margin: 30px 0;
+      box-shadow: 0 0 4px rgba(0,0,0,0.15);
     }
 
     .orders {
@@ -75,23 +83,28 @@
     .order-row {
       display: flex;
       align-items: center;
-      background-color: transparent;
-      padding: 10px 15px;
+      justify-content: center;
+      background-color: white;
+      border: 2px solid white;
       border-radius: 12px;
-      box-shadow: none;
+      padding: 10px 15px;
       width: 95%;
       max-width: 180px;
-      justify-content: center;
+      box-sizing: border-box;
+      gap: 10px;
     }
 
-    .order-row img {
+    .order-row img.logo {
       height: 40px;
-      margin-right: 10px;
+      width: 40px;
+      object-fit: contain;
+      flex-shrink: 0;
     }
 
     .order-number {
       font-size: 1.8rem;
       font-weight: bold;
+      text-align: center;
     }
 
     @media (max-width: 768px) {
@@ -119,14 +132,19 @@
   <div class="container">
     <div class="section">
       <h2>
-        <img src="https://i.postimg.cc/4NpGymRV/GIF-no-BG.gif" alt="gif" />
+        <img src="https://i.postimg.cc/4NpGymRV/GIF-no-BG.gif" alt="gif เตรียมอาหาร" />
         กำลังเตรียมอาหาร
       </h2>
       <div id="preparing" class="orders"></div>
     </div>
 
+    <div class="divider"></div>
+
     <div class="section">
-      <h2>พร้อมส่ง</h2>
+      <h2>
+        พร้อมส่ง
+        <img src="https://i.postimg.cc/76R8qQSN/Untitled-design.gif" alt="gif พร้อมส่ง" />
+      </h2>
       <div id="ready" class="orders"></div>
     </div>
   </div>
@@ -155,12 +173,20 @@
 
           if (orderNumber) {
             const logo = orderNumber.length === 3 ? grabLogo : linemanLogo;
-            preparing.innerHTML += `<div class="order-row"><img src="${logo}" /><span class="order-number">${orderNumber}</span></div>`;
+            preparing.innerHTML += `
+              <div class="order-row">
+                <img class="logo" src="${logo}" />
+                <span class="order-number">${orderNumber}</span>
+              </div>`;
           }
 
           if (readyNumber) {
             const logo = readyNumber.length === 3 ? grabLogo : linemanLogo;
-            ready.innerHTML += `<div class="order-row"><img src="${logo}" /><span class="order-number">${readyNumber}</span></div>`;
+            ready.innerHTML += `
+              <div class="order-row">
+                <img class="logo" src="${logo}" />
+                <span class="order-number">${readyNumber}</span>
+              </div>`;
           }
         });
       } catch (err) {
