@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
@@ -39,12 +39,14 @@
     .container {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       padding: 10px 20px 30px;
       position: relative;
     }
 
     .section {
-      width: 48%;
+      width: 45%;
+      min-width: 300px;
     }
 
     .section h2 {
@@ -57,7 +59,6 @@
       justify-content: center;
       align-items: center;
       gap: 15px;
-      position: relative;
     }
 
     .section h2 img {
@@ -75,14 +76,14 @@
     .order-row {
       display: flex;
       align-items: center;
-      background-color: white;
-      border: 2px solid #ddd;
-      border-radius: 12px;
       padding: 10px 15px;
+      border-radius: 12px;
+      border: 2px solid white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      background-color: #fff;
       width: 95%;
       max-width: 180px;
       justify-content: center;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
     }
 
     .order-row img {
@@ -95,22 +96,31 @@
       font-weight: bold;
     }
 
+    /* เส้นแบ่งแนวตั้งตรงกลาง */
     .divider {
       position: absolute;
       top: 0;
       bottom: 0;
       left: 50%;
-      width: 2px;
+      width: 3px;
       background-color: #ccc;
+      transform: translateX(-50%);
     }
 
     @media (max-width: 768px) {
-      .container {
+      .orders {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      header {
         flex-direction: column;
+        gap: 10px;
       }
-      .section {
-        width: 100%;
+
+      header img {
+        margin: 0;
       }
+
       .divider {
         display: none;
       }
@@ -128,7 +138,7 @@
 
     <div class="section">
       <h2>
-        <img src="https://i.postimg.cc/4NpGymRV/GIF-no-BG.gif" alt="gif" />
+        <img src="https://i.postimg.cc/4NpGymRV/GIF-no-BG.gif" alt="กำลังเตรียมอาหาร" />
         กำลังเตรียมอาหาร
       </h2>
       <div id="preparing" class="orders"></div>
@@ -137,7 +147,7 @@
     <div class="section">
       <h2>
         พร้อมส่ง
-        <img src="https://i.postimg.cc/cHhjJkYz/Copy-of-Untitled-Design.gif" alt="gif" />
+        <img src="https://i.postimg.cc/Y235b04H/Copy-of-Untitled-Design-2.gif" alt="พร้อมส่ง" />
       </h2>
       <div id="ready" class="orders"></div>
     </div>
